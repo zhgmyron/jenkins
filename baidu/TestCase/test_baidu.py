@@ -20,19 +20,21 @@ class baiduPage(unittest.TestCase,Model.DataHelper):
         baidu.login(self.driver,self.readCsv(0,0),self.readCsv(0,1))
         baidu.clickButtonLogin(self.driver)
         self.assertEqual(u'请您填写手机/邮箱/用户名',baidu.getErrorText(self.driver))
+    @unittest.skip("验证:用户名为空")
     def test_001(self,username=''):
         u'''验证:用户名为空,点击登录返回的错误信息'''
         baidu.clickLogin(self.driver)
         baidu.typeUsername(self.driver,username)
         baidu.clickButtonLogin(self.driver)
         self.assertEqual(u'请您填写手机/邮箱/用户名',baidu.getErrorText(self.driver))
+    @unittest.skip("验证:只输入密码")
     def test_002(self,password='admin'):
         u'''验证:只输入密码，点击登录返回的错误信息'''
         baidu.clickLogin(self.driver)
         baidu.typePassword(self.driver,password)
         baidu.clickButtonLogin(self.driver)
         self.assertEqual(u'请您填写手机/邮箱/用户名',baidu.getErrorText(self.driver))
-
+    @unittest.skip("登录成功")
     def test_003(self,username='zhgjames@sina.com',password='Zxcvb1234567'):
         u'''验证:用户登录成功'''
         baidu.clickLogin(self.driver)

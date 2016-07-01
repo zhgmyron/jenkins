@@ -1,5 +1,5 @@
 #coding:utf-8
-#from appium import webdriver
+
 from selenium import webdriver
 from selenium.webdriver.support.expected_conditions import NoSuchElementException
 import time as t
@@ -15,6 +15,6 @@ class Page(object):
             return self.driver.find_element_by_xpath(loc)
         except (NoSuchElementException,KeyError,ValueError,Exception),e:
             print'Error deatail:%s'%(e.args[0])
-    @property
+
     def wait(self):
         t.sleep(3)
