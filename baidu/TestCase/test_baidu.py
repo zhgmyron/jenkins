@@ -9,7 +9,7 @@ import time as t
 
 class baiduPage(unittest.TestCase,Model.DataHelper):
     def setUp(self):
-        self.driver=webdriver.Chrome()
+        self.driver=webdriver.Firefox()
         self.driver.maximize_window()
         self.driver.get('http://www.baidu.com')
         self.driver.implicitly_wait(30)
