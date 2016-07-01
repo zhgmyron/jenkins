@@ -53,8 +53,7 @@ class DataHelper(object):
         item=itemlist[0]
         return item.getAttribute(child)
 
-print DataHelper().getXmlData('test')
-print DataHelper().getXmlUser('failLogin1','expected')
+
 
 
 
